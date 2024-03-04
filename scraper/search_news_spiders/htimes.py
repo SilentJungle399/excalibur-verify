@@ -1,4 +1,5 @@
 import scrapy
+import requests
 
 
 class HindustanTimes(scrapy.Spider):
@@ -9,10 +10,18 @@ class HindustanTimes(scrapy.Spider):
     ]
 
     def parse(self, response: scrapy.http.Response):
-        for article in response.css("div.articleClick"):
-            article_url = article.xpath("@data-weburl").get()
-            yield response.follow(
-                article_url,
+        req = requests.post("https://api.hindustantimes.com/api/articles/search", json = {
+            "page": "1",
+            "searchKeyword": self.search_query,
+            "size": "30",
+            "type": "story"
+        })
+
+        data = req.json()
+
+        for result in data["content"]:
+            yield scrapy.Request(
+                result["metadata"]["canonicalUrl"],
                 callback = self.parse_article
             )
 

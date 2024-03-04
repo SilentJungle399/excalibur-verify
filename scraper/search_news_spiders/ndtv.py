@@ -4,12 +4,15 @@ import scrapy
 class NDTV(scrapy.Spider):
     name = "ndtv_search"
     search_query: str  # This is a type hint to suppress warnings in the IDE
-    start_urls = [
-        "https://www.ndtv.com/latest",
-    ]
+
+    def start_requests(self):
+        yield scrapy.Request(
+            url = f"https://www.ndtv.com/search?searchtext={self.search_query}",
+            callback = self.parse
+        )
 
     def parse(self, response: scrapy.http.Response):
-        for article in response.css("div.news_Itm a"):
+        for article in response.css("div.src_itm-ttl a"):
             article_url = article.xpath("@href").get()
             yield response.follow(
                 article_url,

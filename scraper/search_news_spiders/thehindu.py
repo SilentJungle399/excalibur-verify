@@ -1,15 +1,19 @@
 import scrapy
 
+# TODO: DYNAMIC CONTENT - NEEDS PLAYWRIGHT (BROWSER AUTOMATION) TO WORK
 
 class TheHindu(scrapy.Spider):
     name = "thehindu_search"
     search_query: str  # This is a type hint to suppress warnings in the IDE
-    start_urls = [
-        "https://www.thehindu.com/latest-news",
-    ]
+
+    def start_requests(self):
+        yield scrapy.Request(
+            url = f"https://www.thehindu.com/search/#gsc.tab=0&gsc.q={self.search_query}",
+            callback = self.parse
+        )
 
     def parse(self, response: scrapy.http.Response):
-        for article in response.css("h3.title a"):
+        for article in response.css("a.gs-title"):
             article_url = article.xpath("@href").get()
             yield response.follow(
                 article_url,
