@@ -2,7 +2,7 @@ import scrapy
 
 
 class NDTV(scrapy.Spider):
-    name = "ndtv"
+    name = "ndtv_search"
     start_urls = [
         "https://www.ndtv.com/latest",
     ]

@@ -2,7 +2,7 @@ import scrapy
 
 
 class TheHindu(scrapy.Spider):
-    name = "thehindu"
+    name = "thehindu_search"
     start_urls = [
         "https://www.thehindu.com/latest-news",
     ]

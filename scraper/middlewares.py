@@ -16,7 +16,7 @@ class ScraperSpiderMiddleware:
 
     @classmethod
     def from_crawler(cls, crawler):
-        # This method is used by Scrapy to create your spiders.
+        # This method is used by Scrapy to create your latest_news_spiders.
         s = cls()
         crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
         return s
@@ -63,7 +63,7 @@ class ScraperDownloaderMiddleware:
 
     @classmethod
     def from_crawler(cls, crawler):
-        # This method is used by Scrapy to create your spiders.
+        # This method is used by Scrapy to create your latest_news_spiders.
         s = cls()
         crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
         return s

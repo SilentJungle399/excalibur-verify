@@ -1,14 +1,14 @@
 import scrapy
 
 
-class Livemint(scrapy.Spider):
-    name = "livemint"
+class HindustanTimes(scrapy.Spider):
+    name = "htimes_latest"
     start_urls = [
-        "https://www.livemint.com/latest-news",
+        "https://www.hindustantimes.com/latest-news",
     ]
 
     def parse(self, response: scrapy.http.Response):
-        for article in response.css("div.listingNew"):
+        for article in response.css("div.articleClick"):
             article_url = article.xpath("@data-weburl").get()
             yield response.follow(
                 article_url,
@@ -17,7 +17,7 @@ class Livemint(scrapy.Spider):
 
     def parse_article(self, response: scrapy.http.Response):
         yield {
-            "title": response.css("h1.headline::text").get(),
-            "content": "\n".join(response.css("div#mainArea p::text").getall()),
+            "title": response.css("div.fullStory h1::text").get(),
+            "content": "\n".join(response.css("div.storyDetails p::text").getall()),
             "url": response.url,
         }

@@ -7,7 +7,17 @@ router = web.RouteTableDef()
 @router.post('/image')
 async def index(request):
     print(request)
-    return web.Response(text="Hello, world")
+    # recognize news from image
+    return web.Response(text = "Hello, world")
+
+
+@router.post('/text')
+async def index(request):
+    text = (await request.json())['text']
+    print(text)
+
+    return web.Response(text = "Hello, world")
+
 
 app.add_routes(router)
 web.run_app(app)

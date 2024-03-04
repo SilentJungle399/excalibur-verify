@@ -2,7 +2,7 @@ import scrapy
 
 
 class HindustanTimes(scrapy.Spider):
-    name = "hindustantimes"
+    name = "htimes_search"
     start_urls = [
         "https://www.hindustantimes.com/latest-news",
     ]
@@ -10,10 +10,11 @@ class HindustanTimes(scrapy.Spider):
     def parse(self, response: scrapy.http.Response):
         for article in response.css("div.articleClick"):
             article_url = article.xpath("@data-weburl").get()
-            yield response.follow(
-                article_url,
-                callback = self.parse_article
-            )
+            print(article_url)
+            # yield response.follow(
+            #     article_url,
+            #     callback = self.parse_article
+            # )
 
     def parse_article(self, response: scrapy.http.Response):
         yield {
