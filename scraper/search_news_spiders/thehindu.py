@@ -3,6 +3,7 @@ import scrapy
 
 class TheHindu(scrapy.Spider):
     name = "thehindu_search"
+    search_query: str  # This is a type hint to suppress warnings in the IDE
     start_urls = [
         "https://www.thehindu.com/latest-news",
     ]
@@ -20,4 +21,5 @@ class TheHindu(scrapy.Spider):
             "title": response.css("h1[itemprop='name']::text").get(),
             "content": "\n".join(response.css("div[itemprop='articleBody'] p::text").getall()),
             "url": response.url,
+            "source": "thehindu"
         }

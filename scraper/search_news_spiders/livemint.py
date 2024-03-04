@@ -3,6 +3,7 @@ import scrapy
 
 class Livemint(scrapy.Spider):
     name = "livemint_search"
+    search_query: str  # This is a type hint to suppress warnings in the IDE
     start_urls = [
         "https://www.livemint.com/latest-news",
     ]
@@ -20,4 +21,5 @@ class Livemint(scrapy.Spider):
             "title": response.css("h1.headline::text").get(),
             "content": "\n".join(response.css("div#mainArea p::text").getall()),
             "url": response.url,
+            "source": "livemint"
         }

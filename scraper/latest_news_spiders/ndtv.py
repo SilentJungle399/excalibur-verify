@@ -20,6 +20,7 @@ class NDTV(scrapy.Spider):
             "title": response.xpath("//h1[@itemprop='headline']/text()").get(),
             "content": "\n".join(response.css("div#ins_storybody p::text").getall()),
             "url": response.url,
+            "source": "ndtv"
         }
 
     def parse_sports_article(self, response: scrapy.http.Response):
@@ -28,4 +29,5 @@ class NDTV(scrapy.Spider):
             "title": article_div.css("h1::text").get(),
             "content": "\n".join(response.css("div.story__content p::text").getall()),
             "url": response.url,
+            "source": "ndtv"
         }

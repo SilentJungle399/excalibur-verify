@@ -20,4 +20,5 @@ class TheHindu(scrapy.Spider):
             "title": response.css("h1[itemprop='name']::text").get(),
             "content": "\n".join(response.css("div[itemprop='articleBody'] p::text").getall()),
             "url": response.url,
+            "source": "thehindu"
         }

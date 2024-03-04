@@ -20,4 +20,5 @@ class Livemint(scrapy.Spider):
             "title": response.css("h1.headline::text").get(),
             "content": "\n".join(response.css("div#mainArea p::text").getall()),
             "url": response.url,
+            "source": "livemint"
         }

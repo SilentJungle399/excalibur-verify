@@ -20,4 +20,5 @@ class HindustanTimes(scrapy.Spider):
             "title": response.css("div.fullStory h1::text").get(),
             "content": "\n".join(response.css("div.storyDetails p::text").getall()),
             "url": response.url,
+            "source": "htimes"
         }
