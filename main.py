@@ -1,5 +1,6 @@
 import multiprocessing
 import os
+import json
 
 from aiohttp import web
 
@@ -50,9 +51,10 @@ async def index(request):
 @router.post('/text')
 async def index(request):
     text = (await request.json())['text']
+    print(text, "request received")
     news_res = search_news(text)
 
-    return web.Response(text = "Hello, world")
+    return web.Response(text = json.dumps(news_res))
 
 
 app.add_routes(router)
