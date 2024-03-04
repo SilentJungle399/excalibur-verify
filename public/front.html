@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeriFy</title>
+    <link rel="stylesheet" href="stylefront.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Madimi+One&family=Protest+Riot&family=Rowdies:wght@300;400;700&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Madimi+One&family=Protest+Riot&family=Rowdies:wght@300;400;700&family=Salsa&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Days+One&family=Francois+One&family=Madimi+One&family=Protest+Riot&family=Roboto+Slab:wght@100..900&family=Rowdies:wght@300;400;700&family=Salsa&family=Titan+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+</style>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        
+
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="verify-high-resolution-logo-transparent (2).png" alt="" height="80px" width="180px">
+        </div>
+        <div class="navi">
+            <div>About Us</div>
+            <div>Contact</div>
+            <div>Help</div>
+        </div>
+        <div class="social">
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="Welcome">
+        <div >
+            <h1 style="margin: 200px 0 0 70px; font-size: 60px;"> Welcome!</h1>
+            <div >Step into “The VeriFy”
+
+            </div>
+            <div >
+                What secrets will you discover today?
+            </div>
+            <div>
+                <button id="start" type="submit">To Start</button>
+            </div>
+        </div>
+        <div class="gif">
+
+        </div>
+    </div>
+    <div id="About">
+       <h1 style="font-size: 60px; margin-left: 10px; height: 50px; text-decoration: underline;  font-family: Calistoga, serif;   ">ABOUT US</h1> 
+       <div class="about1">
+Welcome to Verify, your trusted source for debunking misinformation and combating the spread of fake news. Our dedicated team of four passionate individuals from NIT Kurukshetra has come together to address the critical issue of false information in today’s digital age.
+</div>
+<h1 style="font-size: 40px; margin-left: 10px; height: 30px; font-family: Salsa,cursive;">Our Mission</h1>
+<div class="about1">
+At Verify, we believe that accurate information is the cornerstone of a well-informed society. Our mission is to empower users by providing reliable tools to verify news stories, fact-check claims, and separate truth from fiction. By promoting media literacy and critical thinking, we aim to create a safer online environment for everyone.
+</div>
+
+ <h1 style="font-size: 40px;  margin-left: 10px;  font-family: Salsa,cursive;">Meet Our Team</h1>
+ <div id="team">
+ <div>
+<b>HARSH VARDHAN</b>  - Lead Developer <br> <br>
+Harsh brings technical expertise and a passion for truth. He have developed the core features of our platform.
+</div>
+<div>
+<b>SAUMYA SIDOLA</b> - Content Curator <br><br>
+Saumya scours the web for suspicious content, ensuring that only verified information reaches our users. Their commitment to accuracy and thorough research is unmatched.
+</div>
+<div>
+<b>SANJANA MEENA </b> - Community Outreach <br> <br>
+Sajana engages with our user community, conducts workshops, and spreads awareness about fake news prevention. Her dedication to education and advocacy drives our impact.
+</div>
+<div>
+ <b>RISHAV RAJ</b>- Design & User Experience <br> <br>
+Rishav ensures that our platform is user-friendly and visually appealing. His creative flair and attention to detail enhance the overall experience for our users.
+</div>
+</div>
+    </div>
+    <div id="app">
+        <div class="radio-group">
+          <span class="radio-button">
+            <input type="radio" id="text" name="search-method" value="text" v-model="searchMode">
+            <label for="text">Search using text</label>
+          </span>
+          <span class="radio-button">
+            <input type="radio" id="image" name="search-method" value="image" v-model="searchMode">
+            <label for="image">Search using image</label>
+          </span>
+          <span class="radio-button">
+            <input type="radio" id="link" name="search-method" value="link" v-model="searchMode">
+            <label for="link">Search using link</label>
+          </span>
+        </div>
+      
+        <div class="inputs">
+          <textarea v-if="searchMode === 'text'" name="" id="" cols="100" rows="10" placeholder="Enter news content to search..."></textarea>
+          <input v-else-if="searchMode === 'image'" type="file" id="image" name="image" accept="image/*">
+          <input v-else type="text" placeholder="Enter link to article">
+        </div>
+        
+        <button class="submit">Submit</button>
+      </div>
+
+    </div>
+    </div>
+
+    <footer>
+        <h1 style="font-size: 60px; margin-left: 10px; height: 50px; text-decoration: underline;  font-family: Calistoga, serif;  ">CONTACT US</h1>
+        <div class="contact">
+        <div class="Hourly">
+           <h2 style="font-size: 30px;  font-family: Salsa,cursive;">HOURLY</h2>
+            Mon to Fri:10 p.m-6 p.m.<br>
+                Saturday:11 a.m-3:30 p.m.<br>
+                Sunday:closed.<br>
+        </div>
+        <div class="Cdetails">
+          <h2 style="font-size: 30px;  font-family: Salsa,cursive;">CONTACT DETAILS</h2>
+                yrishavraj@gmail.com<br>
+                03.78.02.64.54<br>
+                NIT Kurukshetra Thanesar,Kurukshetra,<br>
+                Haryana,136119.<br>
+            
+      </div>
+        <div class="GMAP">
+            <p>
+    
+            </p>
+          </div>
+        </div>
+  </footer>
+    
+</body>
+<script src="scripts.js"></script>
+</html>
