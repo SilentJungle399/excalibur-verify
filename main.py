@@ -46,9 +46,7 @@ def run_crawler(query):
 def search_news(query):
     with multiprocessing.Pool() as pool:
         data = pool.map(run_crawler, [query, ])
-        # fake_data = pool.map(run_crawler, [query + " is fake claim", ])
         calculated = pool.map(calculate_query, [(data[0], query), ])
-        # calculated = calculate_query(data[0], fake_data[0], query)
 
         return calculated
 
