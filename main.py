@@ -70,30 +70,20 @@ def calculate_query(args):
 
     news_res, data = args
     fmt_content = [fmt_news(n["content"]) for n in news_res if len(n["content"]) > 1000 and eng_verify(n["content"])]
-    # fmt_fake_content = [fmt_news(n["content"]) for n in fake_news_res if len(n["content"]) > 1000 and eng_verify(n["content"])]
     print("Content formatted")
 
     query_embedding = model.encode(data)
-    # fake_query_embedding = model.encode(data)
 
     passage_embedding = model.encode(fmt_content)
-    # fake_passage_embedding = model.encode(fmt_fake_content)
 
     print("Embeddings calculated")
 
     sim = []
-    # fake_sim = []
 
     for passage in passage_embedding:
         sim.append(util.cos_sim(query_embedding, passage))
 
-    # for passage in fake_passage_embedding:
-    #     fake_sim.append(util.cos_sim(fake_query_embedding, passage))
-
     print("Normal", sum(sim) / len(sim))
-    # print("Fake", sum(fake_sim) / len(fake_sim))
-
-    # return int((sum(sim) / len(sim)) > (sum(fake_sim) / len(fake_sim))), [*news_res, *fake_news_res]
     return float(sum(sim) / len(sim)), news_res
 
 
