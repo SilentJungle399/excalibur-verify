@@ -126,9 +126,39 @@ z-index: 999;
   height: 50%;
   margin-top: 200px;
 }
-.radio-group {
-  display: inline-flex;
-  border: solid #ddd 1px;
+#app{
+  height: 600px;
+  margin: 20px;
+}
+.intruct{
+  text-align: center;
+  font-size: 20px;
+  color: #ECECEA;
+  font-weight: 100;
+  font-family: "Salsa","cursive";
+  margin-top: 50px;
+}
+.inputs{
+  margin-left: 346px;
+  margin-top: 20px;
+}
+.submit{
+  margin-left: 661.6px;
+  margin-top: 20px;
+  width: 140px;
+  border-radius: 10px;
+  color: #064780;
+  font-family: "Calistoga", serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+  box-shadow: 1px 1px 2px black;
+  cursor: pointer;
+}
+.submit:hover{
+  background-color: #bababa;
+  transform: scale(0.95);
+  transition: 0.4s;
 }
 
 .radio-button {
@@ -165,6 +195,7 @@ z-index: 999;
   padding: 5px 10px;
   border-radius: 5px;
 }
+
 #About{
   border-radius: 15px;
   background-color: #ECECEA ;
@@ -232,4 +263,15 @@ footer{
   width: 40%;
   height: 300px;
   background-color: #064780;
+}
+.email{
+  height: 40px;
+  width: 40px;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }

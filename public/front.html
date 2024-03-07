@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VeriFy</title>
     <link rel="stylesheet" href="stylefront.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/e0ab3c7295.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Madimi+One&family=Protest+Riot&family=Rowdies:wght@300;400;700&family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Madimi+One&family=Protest+Riot&family=Rowdies:wght@300;400;700&family=Salsa&family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Days+One&family=Francois+One&family=Madimi+One&family=Protest+Riot&family=Roboto+Slab:wght@100..900&family=Rowdies:wght@300;400;700&family=Salsa&family=Titan+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 </style>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        
-
 </head>
 
 <body>
@@ -51,6 +49,17 @@
 
         </div>
     </div>
+    <div style="height: 12px; width: 1503.2px; background-color: #ECECEA;"></div>
+    <div id="app">
+      <h1 style=" font-size: 55px; font-family: Calistoga, serif; text-align: center; color:#ECECEA; margin-top: 100px; line-height: 20px; ">YOUR TRUTH COMPASS</h1>
+      <h2 style=" font-size: 40px; font-family: Calistoga, serif;text-align: center; color:#ECECEA; ">Fact-Check Your News</h2>
+      <div class="intruct"> In the text box below, type or paste the news article, headline, or snippet that you want to verify.
+      </div>
+      <div class="inputs">
+        <textarea name="" id="" cols="100" rows="5" placeholder="Enter news content to search..."></textarea>
+      </div>
+      <button class="submit">Submit</button>
+    </div>
     <div id="About">
        <h1 style="font-size: 60px; margin-left: 10px; height: 50px; text-decoration: underline;  font-family: Calistoga, serif;   ">ABOUT US</h1> 
        <div class="about1">
@@ -73,7 +82,7 @@ Saumya scours the web for suspicious content, ensuring that only verified inform
 </div>
 <div>
 <b>SANJANA MEENA </b> - Community Outreach <br> <br>
-Sajana engages with our user community, conducts workshops, and spreads awareness about fake news prevention. Her dedication to education and advocacy drives our impact.
+Sanjana engages with our user community, conducts workshops, and spreads awareness about fake news prevention. Her dedication to education and advocacy drives our impact.
 </div>
 <div>
  <b>RISHAV RAJ</b>- Design & User Experience <br> <br>
@@ -81,33 +90,11 @@ Rishav ensures that our platform is user-friendly and visually appealing. His cr
 </div>
 </div>
     </div>
-    <div id="app">
-        <div class="radio-group">
-          <span class="radio-button">
-            <input type="radio" id="text" name="search-method" value="text" v-model="searchMode">
-            <label for="text">Search using text</label>
-          </span>
-          <span class="radio-button">
-            <input type="radio" id="image" name="search-method" value="image" v-model="searchMode">
-            <label for="image">Search using image</label>
-          </span>
-          <span class="radio-button">
-            <input type="radio" id="link" name="search-method" value="link" v-model="searchMode">
-            <label for="link">Search using link</label>
-          </span>
-        </div>
-      
-        <div class="inputs">
-          <textarea v-if="searchMode === 'text'" name="" id="" cols="100" rows="10" placeholder="Enter news content to search..."></textarea>
-          <input v-else-if="searchMode === 'image'" type="file" id="image" name="image" accept="image/*">
-          <input v-else type="text" placeholder="Enter link to article">
-        </div>
-        
-        <button class="submit">Submit</button>
-      </div>
+  
 
     </div>
     </div>
+    <div  style="height: 12px; width: 1503.2px; background-color:#064780;" ></div>
 
     <footer>
         <h1 style="font-size: 60px; margin-left: 10px; height: 50px; text-decoration: underline;  font-family: Calistoga, serif;  ">CONTACT US</h1>
@@ -117,10 +104,18 @@ Rishav ensures that our platform is user-friendly and visually appealing. His cr
             Mon to Fri:10 p.m-6 p.m.<br>
                 Saturday:11 a.m-3:30 p.m.<br>
                 Sunday:closed.<br>
+                <span class="fa-stack fa-lg" style="margin-top: 12px;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    
+                </span>
+                <span class="fa-stack fa-lg" style="margin-top: 12px;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                   <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                </span>
         </div>
         <div class="Cdetails">
           <h2 style="font-size: 30px;  font-family: Salsa,cursive;">CONTACT DETAILS</h2>
-                yrishavraj@gmail.com<br>
                 03.78.02.64.54<br>
                 NIT Kurukshetra Thanesar,Kurukshetra,<br>
                 Haryana,136119.<br>
