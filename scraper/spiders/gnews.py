@@ -8,7 +8,7 @@ class GNews(scrapy.Spider):
 
     custom_settings = {
         "LOG_ENABLED": True,
-        "DOWNLOAD_TIMEOUT": 5
+        "DOWNLOAD_TIMEOUT": 30
     }
 
     def start_requests(self):

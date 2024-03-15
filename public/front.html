@@ -21,9 +21,15 @@
                            width="180px">
     </div>
     <div class="navi">
-        <div>About Us</div>
-        <div>Contact</div>
-        <div>Help</div>
+        <div><a style="color: black; text-decoration: none" href="#About">
+            About Us
+        </a></div>
+        <div><a style="color: black; text-decoration: none" href="#contact-us">
+            Contact
+        </a></div>
+        <div><a style="color: black; text-decoration: none" href="#">
+            Help
+        </a></div>
     </div>
     <div class="social">
         <ul>
@@ -43,14 +49,16 @@
             What secrets will you discover today?
         </div>
         <div>
-            <button id="start" type="submit">To Start</button>
+            <a href="#to-start">
+                <button id="start" type="submit">To Start</button>
+            </a>
         </div>
     </div>
     <div class="gif">
         <img src="/public/4658364.jpg" alt="" height="500px" style="border-radius: 15px;">
     </div>
 </div>
-<div style="height: 12px; width: 1503.2px; background-color: #ECECEA;"></div>
+<div style="height: 12px; width: 1503.2px; background-color: #ECECEA;" id="to-start"></div>
 <div id="app">
     <h1 style=" font-size: 55px; font-family: Calistoga, serif; text-align: center; color:#ECECEA; margin-top: 100px; line-height: 20px; ">
         YOUR TRUTH COMPASS</h1>
@@ -70,8 +78,10 @@
         Processing{{dots}}
     </div>
     <div class="intruct" v-else>
-        The news is a {{ resStatus.message }} news.
+        The news is a {{ resStatus.message }} news.<br>
+        <button style="margin-left: 0" class="submit" @click="reload">Check another news</button>
     </div>
+
 </div>
 <div id="About">
     <h1 style="font-size: 60px; margin-left: 10px; height: 50px; text-decoration: underline;  font-family: Calistoga, serif;   ">
@@ -119,7 +129,7 @@
 </div>
 <div style="height: 12px; width: 1503.2px; background-color:#064780;"></div>
 
-<footer>
+<footer id="contact-us">
     <h1 style="font-size: 60px; margin-left: 10px; height: 50px; text-decoration: underline;  font-family: Calistoga, serif;  ">
         CONTACT US</h1>
     <div class="contact">
